@@ -1,6 +1,6 @@
 {
   "name": "9kw",
-  "version": "0.1.0",
+  "version": "0.15.1",
   "description": "9kw api wrapper to solve captchas",
   "main": "src/index.js",
   "scripts": {
@@ -13,10 +13,15 @@
   "author": "Carlos Florencio <Carlos Florencio>",
   "license": "MIT",
   "dependencies": {
+    "mocha": "^3.1.2",
     "superagent": "^2.3.0"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/iamfreee/9kw_node.git"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.1.2"
   }
 }
