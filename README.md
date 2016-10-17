@@ -49,7 +49,7 @@ captcha.getSolutionLoop(captchaID, 40, (err, solution) => {
 - Tests
 
 ## Changelog
-- 0.0.1 (17/10/2016) - First version with only submit and get captcha solution
+- 0.1.0 (17/10/2016) - First version with only submit and get captcha solution
 
 ## License
 
