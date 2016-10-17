@@ -14,5 +14,9 @@
   "license": "MIT",
   "dependencies": {
     "superagent": "^2.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iamfreee/9kw_node.git"
   }
 }
