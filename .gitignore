@@ -68,6 +68,9 @@ jspm_packages
 # Output of 'npm pack'
 *.tgz
 
+# Typings directory
+typings
+
 
 ### PhpStorm ###
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and Webstorm
@@ -109,3 +112,7 @@ fabric.properties
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
+typings.json
+
+# test config with the api key
+# should contain: module.exports = { api: "XXXX" }

@@ -4,7 +4,7 @@
   "description": "9kw api wrapper to solve captchas",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "keywords": [
     "9kw",
@@ -13,7 +13,6 @@
   "author": "Carlos Florencio <Carlos Florencio>",
   "license": "MIT",
   "dependencies": {
-    "mocha": "^3.1.2",
     "superagent": "^2.3.0"
   },
   "repository": {
@@ -21,7 +20,6 @@
     "url": "https://github.com/iamfreee/9kw_node.git"
   },
   "devDependencies": {
-    "chai": "^3.5.0",
     "mocha": "^3.1.2"
   }
 }
