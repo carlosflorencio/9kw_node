@@ -46,9 +46,10 @@ captcha.getSolutionLoop(captchaID, 40, (err, solution) => {
 ## TODO
 - Add function to check account balance
 - Add function to mark the solution correct or not
-- Tests
+- Add more Tests
 
 ## Changelog
+- 0.1.1 (24/10/2016) - Started tests
 - 0.1.0 (17/10/2016) - First version with only submit and get captcha solution
 
 ## License
