@@ -86,13 +86,6 @@ describe("Captcha", function () {
                 captcha.getBalance(function (err, res) {
                     done(err)
                 });
-
-
-                captcha.submitUrl('url', (err, captchaID) => {
-                    "use strict";
-
-
-                })
             })
         })
 

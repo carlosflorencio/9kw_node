@@ -1,5 +1,6 @@
 const fs = require('fs')
 
+// Load the api key from a file so we can exclude it from version control
 let api = fs.readFileSync('./test/api_key.txt').toString()
 
 module.exports = {

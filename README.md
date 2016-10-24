@@ -30,7 +30,8 @@ captcha.submitImage("./captcha.png", (err, newID) => {
     }
 	
     console.log("Captcha uploaded!: " + captchaID);
-    // Next step is to get the solution of the uploaded captcha using the new captchaID
+    // Next step is to get the solution of the uploaded captcha using 
+    // the new captchaID
 })
 
 // Get the solution of the captcha with a timeout of 40 seconds
@@ -60,6 +61,7 @@ captcha.getBalance((err, balance) => {
 ```
 
 ## Changelog
+- 0.1.4 (24/10/2016) - Refactored minor things
 - 0.1.3 (24/10/2016) - Added isCorrect, serverCheck and getBalance methods
 - 0.1.2 (24/10/2016) - Started tests
 - 0.1.0 (17/10/2016) - First version with only submit and get captcha solution
