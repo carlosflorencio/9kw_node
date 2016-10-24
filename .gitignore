@@ -116,3 +116,6 @@ typings.json
 
 # test config with the api key
 # should contain: module.exports = { api: "XXXX" }
+
+# File with the api key
+test/api_key.txt

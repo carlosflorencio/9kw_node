@@ -43,7 +43,60 @@ describe("Captcha", function () {
                 })
             });
         });
+
+        describe('#getSolution()', function () {
+            it('valid debug captcha id should run without problems', function (done) {
+                captcha.getSolution('11111111', function (err, solution) {
+                    done(err)
+                });
+            })
+        })
+
+        describe('#getSolutionLoop()', function () {
+            it('should run without problems with a valid debug captcha id', function (done) {
+                captcha.getSolutionLoop('11111111', 40, function (err, solution) {
+                    done(err)
+                });
+            })
+        })
+
+        describe('#isCorrect()', function () {
+            it('should send the captcha feedback without problemas', function (done) {
+                captcha.isCorrect('11111111',true, function (err, res) {
+                    assert(err === null, err)
+                    assert(res === 'OK', res)
+                    done()
+                });
+            })
+        })
     });
+
+    describe('General API', function () {
+
+        describe('#serverCheck()', function () {
+            it('should get the server info without problems', function (done) {
+                captcha.serverCheck(function (err, res) {
+                    done(err)
+                });
+            })
+        })
+
+        describe('#getBalance()', function () {
+            it('should get the account balance', function (done) {
+                captcha.getBalance(function (err, res) {
+                    done(err)
+                });
+
+
+                captcha.submitUrl('url', (err, captchaID) => {
+                    "use strict";
+
+
+                })
+            })
+        })
+
+    })
 
 })
 

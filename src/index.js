@@ -9,7 +9,7 @@ const request = require('superagent')
  */
 function Captha(api_key) {
     this.API_KEY = api_key
-    this.URL = "https://www.9kw.eu/index.cgi"
+    this.URL = "https://www.9kw.eu/"
     this.debug = 0
 
     /*
@@ -127,7 +127,66 @@ function Captha(api_key) {
         func(captchaID, endTime, callback)
     }
 
+    /**
+     * Say to 9kw if the captcha solution you got from the getSolution method
+     * is correct or incorrect
+     * @param captchaID
+     * @param isCorrect boolean
+     * @param optionalCallback (err, res)
+     */
+    this.isCorrect = function (captchaID, isCorrect, optionalCallback) {
+        generalGetRequest()
+            .query('action=usercaptchacorrectback')
+            .query('id=' + captchaID)
+            .query('correct=' + (isCorrect ? 1 : 0))
+            .end((err, res) => {
+                // if callback exists, call it
+                if (typeof optionalCallback !== 'undefined') {
+                    if(err) {
+                        optionalCallback(err)
+                    } else {
+                        optionalCallback(null, res.text)
+                    }
+                }
+            })
+    }
 
+    /*
+    |--------------------------------------------------------------------------
+    | Account & General Info
+    |--------------------------------------------------------------------------
+    */
+    /**
+     * Get the server info
+     * @param callback (err, serverinfoString)
+     */
+    this.serverCheck = function (callback) {
+        request
+            .get(this.URL + 'grafik/servercheck.txt')
+            .end((err, res) => {
+                if (err) {
+                    callback(err)
+                } else {
+                    callback(null, res.text)
+                }
+            })
+    }
+
+    /**
+     * Get the user balance
+     * @param callback (err, response)
+     */
+    this.getBalance = function (callback) {
+        generalGetRequest()
+            .query('action=usercaptchaguthaben')
+            .end((err, res) => {
+                if (err) {
+                    callback(err)
+                } else {
+                    callback(null, parseInt(res.text))
+                }
+            })
+    }
 
 
     /*
@@ -136,12 +195,12 @@ function Captha(api_key) {
      |--------------------------------------------------------------------------
      */
     const generalGetRequest = () => request
-        .get(this.URL)
+        .get(this.URL + 'index.cgi')
         .query('apikey='+ this.API_KEY)
         .query('debug=' + this.debug)
 
     const constructUploadRequest = () => request
-        .post(this.URL)
+        .post(this.URL + 'index.cgi')
         .field('apikey', this.API_KEY)
         .field('action', 'usercaptchaupload')
         .field('source', 'js')
